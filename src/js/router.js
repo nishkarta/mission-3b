@@ -17,7 +17,6 @@ const routes = {
 };
 
 function getPath() {
-  // "#/about" -> "/about"
   const hash = window.location.hash || "#/";
   return hash.replace("#", "");
 }
@@ -62,7 +61,7 @@ export function initRouter() {
     // Only intercept "#/..."
     if (href.startsWith("#/")) {
       e.preventDefault();
-      window.location.hash = href;
+      window.location.hash = href.slice(1);
     }
   });
 
