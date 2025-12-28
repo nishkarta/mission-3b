@@ -1,4 +1,6 @@
 :root {
+  --font-sans: "Lato", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
   /* Brand */
   --color-primary: #3254FF;
   --color-primary-100: #243FDB;
@@ -49,7 +51,7 @@
   --color-error-hover: #DB3A2A;
   --color-error-bg: #FFEAD780;
 
-   /* Greyscale */
+  /* Greyscale */
   --color-greyscale-50: #FAFAFA;
   --color-greyscale-100: #F5F5F5;
   --color-greyscale-200: #EEEEEE;
@@ -68,7 +70,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, Arial, sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.4;
   padding: 24px;
 }
