@@ -1,19 +1,20 @@
 const routes = {
-  "/home": {
-    html: "./src/routes/homepage/index.html",
-    css: "./src/routes/homepage/styles.css",
-    title: "Home Page",
+  "/login": {
+    html: "./src/routes/login/index.html",
+    css: "./src/routes/login/styles.css",
+    title: "Login",
   },
   "/register": {
     html: "./src/routes/register/index.html",
     css: "./src/routes/register/styles.css",
     title: "Register",
   },
-  "/": {
-    html: "./src/routes/login/index.html",
-    css: "./src/routes/login/styles.css",
-    title: "Login",
+  "/home": {
+    html: "./src/routes/homepage/index.html",
+    css: "./src/routes/homepage/styles.css",
+    title: "Home Page",
   },
+
 };
 
 function getPath() {
@@ -39,7 +40,20 @@ async function loadHtml(url) {
 
 export async function renderRoute() {
   const path = getPath();
+  // default redirect
+  if (path === "/") {
+    window.location.hash = "/login";
+    return;
+  }
+
   const route = routes[path] || routes["/"];
+
+  if (!route) {
+    console.error("Route not found:", path);
+    window.location.hash = "/login";
+    return;
+  }
+
 
   document.title = route.title;
   setRouteCss(route.css);

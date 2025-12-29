@@ -66,13 +66,17 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
 body {
   margin: 0;
   font-family: var(--font-sans);
   line-height: 1.4;
-  padding: 24px;
+  padding: 0;
+  /* background-color: var(--color-other-header); */
 }
 
 a {
