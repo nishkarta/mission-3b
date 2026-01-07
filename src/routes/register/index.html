@@ -1,5 +1,24 @@
 <section class="page register">
-  <h1>Register</h1>
-  <p>Email: example@domain.com</p>
-  <a href="#/home">Back to Home</a>
+  <app-auth-card title="Daftar" description="Selamat datang!">
+    <form class="content" action="#/home" novalidate>
+      <app-input-field label="Username" placeholder="Masukkan username" name="username" required></app-input-field>
+      <app-input-field label="Kata Sandi" placeholder="Masukkan kata sandi" name="password" type="password"
+        required></app-input-field>
+      <div class="field password">
+        <app-input-field label="Konfirmasi Kata Sandi" placeholder="Masukkan kata sandi" name="password2" type="password"
+          required></app-input-field>
+        <div class="other">
+          <p>Sudah punya akun?&nbsp; <a href="#/login">Masuk</a></p>
+        </div>
+      </div>
+      <div class="action">
+        <app-button variant="secondary" type="submit" full>Daftar</app-button>
+        <span>atau</span>
+        <app-button variant="outline" full>
+          <img slot="icon" src="../../../assets/images/google.png" alt="" />
+          Daftar dengan Google
+        </app-button>
+      </div>
+    </form>
+  </app-auth-card>
 </section>

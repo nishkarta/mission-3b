@@ -1,0 +1,63 @@
+.page.register {
+  height: 100vh;
+  overflow: auto;
+  background-image: url('../../../assets/images/register-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 26px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-30-20);
+}
+
+.field.password {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12-6);
+}
+
+.other {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.other>p {
+  flex-grow: 1;
+  font-size: var(--text-fs-14-10);
+  color: var(--color-text-light-secondary);
+}
+
+.other a {
+  /* font-size: var(--text-fs-16-10); */
+  color: var(--color-greyscale-50);
+  background-color: transparent;
+}
+
+.other a {
+  font-weight: 600;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8-4)
+}
+
+.action>* {
+  width: 100%;
+  text-align: center;
+}
+
+.action>span {
+  font-size: var(--text-fs-14-10);
+  color: var(--color-text-light-disabled);
+}

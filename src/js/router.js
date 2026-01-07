@@ -2,6 +2,7 @@ const routes = {
   "/login": {
     html: "./src/routes/login/index.html",
     css: "./src/routes/login/styles.css",
+    init: () => import("../routes/login/page.js").then((m) => m.initLoginPage()),
     title: "Login",
   },
   "/register": {
@@ -40,13 +41,13 @@ async function loadHtml(url) {
 
 export async function renderRoute() {
   const path = getPath();
-  // default redirect
+
   if (path === "/") {
     window.location.hash = "/login";
     return;
   }
 
-  const route = routes[path] || routes["/"];
+  const route = routes[path];
 
   if (!route) {
     console.error("Route not found:", path);
@@ -54,12 +55,15 @@ export async function renderRoute() {
     return;
   }
 
-
   document.title = route.title;
   setRouteCss(route.css);
 
   document.getElementById("app").innerHTML = await loadHtml(route.html);
+
+  // ✅ IMPORTANT: run route JS after DOM exists
+  await route.init?.();
 }
+
 
 export function initRouter() {
   document.addEventListener("click", (e) => {

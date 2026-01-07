@@ -1,7 +1,23 @@
 <section class="page login">
-  <h1>Login</h1>
-  <p>This is the login page.</p>
-  <a href="#/home">Back to Home</a>
-    <app-auth-card title="Card 1" content="This is reusable."></app-auth-card>
-
+  <app-auth-card title="Masuk" description="Selamat datang kembali!">
+    <form class="content" action="#/home" novalidate>
+      <app-input-field label="Username" placeholder="Masukkan username" name="username" required></app-input-field>
+      <div class="field password">
+        <app-input-field label="Kata Sandi" placeholder="Masukkan kata sandi" name="password" type="password"
+          required></app-input-field>
+        <div class="other">
+          <p>Belum punya akun?&nbsp; <a href="#/register">Daftar</a></p>
+          <a href="">Lupa kata sandi</a>
+        </div>
+      </div>
+      <div class="action">
+        <app-button variant="secondary" type="submit" full>Masuk</app-button>
+        <span>atau</span>
+        <app-button variant="outline" full>
+          <img slot="icon" src="../../../assets/images/google.png" alt="" />
+          Masuk dengan Google
+        </app-button>
+      </div>
+    </form>
+  </app-auth-card>
 </section>
