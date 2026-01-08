@@ -80,8 +80,12 @@
   --text-fs-16-10: 16px;
   --text-fs-14-10: 14px;
 
+  --space-80-20: 80px;
+  --space-80-12: 80px;
+  --space-60-20: 60px;
   --space-40-24: 40px;
   --space-30-20: 30px;
+  --space-25-6: 25px;
   --space-12-6: 12px;
   --space-8-4: 8px;
 
@@ -106,8 +110,12 @@
     --text-fs-16-10: 12px;
     --text-fs-14-10: 12px;
 
+    --space-80-20: 40px;
+    --space-80-12: 40px;
+    --space-60-20: 30px;
     --space-40-24: 32px;
     --space-30-20: 24px;
+    --space-25-6: 12px;
     --space-12-6: 8px;
     --space-8-4: 6px;
 
@@ -133,8 +141,12 @@
     --text-fs-16-10: 10px;
     --text-fs-14-10: 10px;
 
+    --space-80-20: 20px;
+    --space-80-12: 12px;
+    --space-60-20: 20px;
     --space-40-24: 24px;
     --space-30-20: 20px;
+    --space-25-6: 6px;
     --space-12-6: 6px;
     --space-8-4: 4px;
   }
@@ -152,7 +164,7 @@ body {
   font-family: var(--font-sans);
   line-height: 1.4;
   padding: 0;
-  /* background-color: var(--color-other-header); */
+  background-color: var(--color-other-header);
 }
 
 a {
