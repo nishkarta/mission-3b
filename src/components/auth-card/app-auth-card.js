@@ -12,7 +12,7 @@ template.innerHTML = `
 
     .card {
       border-radius: 16px;
-      padding: var(--space-40-24);
+      padding: var(--any-size-40-24);
       background: #181A1CD6;
       width: 529px;
       max-width: calc(100vw - 56px);
@@ -32,14 +32,14 @@ template.innerHTML = `
       object-fit: contain:  
     }
     .title {
-      font-size: var(--text-fs-32-18);      
+      font-size: var(--any-size-32-18);      
       font-weight: 700;
       line-height: 110%;
       margin-top: 20px;
       margin-bottom: 8px;
     }
     .description {
-      font-size: var(--text-fs-16-10);      
+      font-size: var(--any-size-16-10);      
       font-weight: 400;
     }
     ::slotted(*) {
@@ -49,7 +49,7 @@ template.innerHTML = `
 
   <div class="card">
     <div class="card-header">
-      <img class="logo" src="../../../assets/images/logo.png" alt="" />
+      <img class="logo" src="../../../assets/images/logo-text.png" alt="" />
       <h3 class="title"></h3>
       <p class="description"></p>
     </div>

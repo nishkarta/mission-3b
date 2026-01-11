@@ -32,7 +32,9 @@ template.innerHTML = `
     input {
       width: 100%;
       height: var(--input-h, 48px);
-      padding: 14px 20px;
+      padding-block: 8px;
+      padding-inline: var(--any-size-20-12);
+
       font-size: var(--input-fs, 16px);
       color: var(--color-text-light-secondary);
 
@@ -54,11 +56,8 @@ template.innerHTML = `
     .toggle {
       position: absolute;
       top: 50%;
-      right: 16px;
+      right: var(--any-size-20-12);
       transform: translateY(-50%);
-
-      width: 32px;
-      height: 32px;
       border-radius: 999px;
 
       display: none;
@@ -101,8 +100,8 @@ template.innerHTML = `
     :host([error]) .error-text { display: block; }
 
     .icon {
-      width: 22px;
-      height: 22px;
+      width: var(--any-size-20-12);
+      aspect-ratio: 1;
       display: block;
     }
 

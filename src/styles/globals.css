@@ -71,23 +71,29 @@
   --input-fs: 16px;
   --input-label-fs: 16px;
 
-  --text-fs-48-24: 48px;
-  --text-fs-32-20: 32px;
-  --text-fs-32-18: 32px;
-  --text-fs-18-14: 18px;
-  --text-fs-18-12: 18px;
-  --text-fs-18-10: 18px;
-  --text-fs-16-10: 16px;
-  --text-fs-14-10: 14px;
+  --any-size-48-24: 48px;
+  --any-size-44-24: 44px;
+  --any-size-32-20: 32px;
+  --any-size-32-18: 32px;
+  --any-size-28-16: 28px;
+  --any-size-20-12: 20px;
+  --any-size-18-14: 18px;
+  --any-size-18-12: 18px;
+  --any-size-18-10: 18px;
+  --any-size-16-12: 16px;
+  --any-size-16-10: 16px;
+  --any-size-14-10: 14px;
 
-  --space-80-20: 80px;
-  --space-80-12: 80px;
-  --space-60-20: 60px;
-  --space-40-24: 40px;
-  --space-30-20: 30px;
-  --space-25-6: 25px;
-  --space-12-6: 12px;
-  --space-8-4: 8px;
+  --any-size-80-40: 80px;
+  --any-size-80-20: 80px;
+  --any-size-80-12: 80px;
+  --any-size-60-20: 60px;
+  --any-size-40-24: 40px;
+  --any-size-40-20: 40px;
+  --any-size-30-20: 30px;
+  --any-size-25-6: 25px;
+  --any-size-12-6: 12px;
+  --any-size-8-4: 8px;
 
 }
 
@@ -101,23 +107,29 @@
     --input-fs: 13px;
     --input-label-fs: 13px;
 
-    --text-fs-48-24: 32px;
-    --text-fs-32-20: 24px;
-    --text-fs-32-18: 24px;
-    --text-fs-18-14: 16px;
-    --text-fs-18-12: 14px;
-    --text-fs-18-10: 14px;
-    --text-fs-16-10: 12px;
-    --text-fs-14-10: 12px;
+    --any-size-48-24: 32px;
+    --any-size-44-24: 32px;
+    --any-size-32-20: 24px;
+    --any-size-32-18: 24px;
+    --any-size-28-16: 24px;
+    --any-size-20-12: 16px;
+    --any-size-18-14: 16px;
+    --any-size-18-12: 14px;
+    --any-size-18-10: 14px;
+    --any-size-16-12: 14px;
+    --any-size-16-10: 12px;
+    --any-size-14-10: 12px;
 
-    --space-80-20: 40px;
-    --space-80-12: 40px;
-    --space-60-20: 30px;
-    --space-40-24: 32px;
-    --space-30-20: 24px;
-    --space-25-6: 12px;
-    --space-12-6: 8px;
-    --space-8-4: 6px;
+    --any-size-80-40: 60px;
+    --any-size-80-20: 40px;
+    --any-size-80-12: 40px;
+    --any-size-60-20: 30px;
+    --any-size-40-24: 32px;
+    --any-size-40-20: 28px;
+    --any-size-30-20: 24px;
+    --any-size-25-6: 12px;
+    --any-size-12-6: 8px;
+    --any-size-8-4: 6px;
 
   }
 }
@@ -129,26 +141,32 @@
     --btn-fs: 10px;
 
     --input-h: 28px;
-    --input-fs: 20px;
+    --input-fs: 9px;
     --input-label-fs: 10px;
 
-    --text-fs-48-24: 24px;
-    --text-fs-32-20: 20px;
-    --text-fs-32-18: 18px;
-    --text-fs-18-14: 14px;
-    --text-fs-18-12: 12px;
-    --text-fs-18-10: 10px;
-    --text-fs-16-10: 10px;
-    --text-fs-14-10: 10px;
+    --any-size-48-24: 24px;
+    --any-size-44-24: 24px;
+    --any-size-32-20: 20px;
+    --any-size-32-18: 18px;
+    --any-size-28-16: 16px;
+    --any-size-20-12: 12px;
+    --any-size-18-14: 14px;
+    --any-size-18-12: 12px;
+    --any-size-18-10: 10px;
+    --any-size-16-12: 12px;
+    --any-size-16-10: 10px;
+    --any-size-14-10: 10px;
 
-    --space-80-20: 20px;
-    --space-80-12: 12px;
-    --space-60-20: 20px;
-    --space-40-24: 24px;
-    --space-30-20: 20px;
-    --space-25-6: 6px;
-    --space-12-6: 6px;
-    --space-8-4: 4px;
+    --any-size-80-40: 40px;
+    --any-size-80-20: 20px;
+    --any-size-80-12: 12px;
+    --any-size-60-20: 20px;
+    --any-size-40-24: 24px;
+    --any-size-40-20: 20px;
+    --any-size-30-20: 20px;
+    --any-size-25-6: 6px;
+    --any-size-12-6: 6px;
+    --any-size-8-4: 4px;
   }
 }
 
@@ -165,8 +183,13 @@ body {
   line-height: 1.4;
   padding: 0;
   background-color: var(--color-other-header);
+  overflow-x: hidden;
 }
 
 a {
   color: inherit;
+}
+
+#app {
+  transition: opacity 120ms ease;
 }

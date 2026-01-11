@@ -90,8 +90,8 @@ template.innerHTML = `
 
     /* Icon slot */
     ::slotted([slot="icon"]) {
-      width: 18px;
-      height: 18px;
+      width: var(--any-size-20-12);
+      height: var(--any-size-20-12);
       display: block;
     }
 

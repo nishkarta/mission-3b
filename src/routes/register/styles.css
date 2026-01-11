@@ -1,7 +1,9 @@
 .page.register {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   overflow: auto;
   background-image: url('../../../assets/images/register-bg.jpg');
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -14,13 +16,13 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-30-20);
+  gap: var(--any-size-30-20);
 }
 
 .field.password {
   display: flex;
   flex-direction: column;
-  gap: var(--space-12-6);
+  gap: var(--any-size-12-6);
 }
 
 .other {
@@ -31,12 +33,12 @@
 
 .other>p {
   flex-grow: 1;
-  font-size: var(--text-fs-14-10);
+  font-size: var(--any-size-14-10);
   color: var(--color-text-light-secondary);
 }
 
 .other a {
-  /* font-size: var(--text-fs-16-10); */
+  /* font-size: var(--any-size-16-10); */
   color: var(--color-greyscale-50);
   background-color: transparent;
 }
@@ -49,7 +51,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-8-4)
+  gap: var(--any-size-8-4)
 }
 
 .action>* {
@@ -58,6 +60,6 @@
 }
 
 .action>span {
-  font-size: var(--text-fs-14-10);
+  font-size: var(--any-size-14-10);
   color: var(--color-text-light-disabled);
 }

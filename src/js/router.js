@@ -3,17 +3,17 @@ const routes = {
     html: "./src/routes/login/index.html",
     css: "./src/routes/login/styles.css",
     init: () => import("../routes/login/page.js").then((m) => m.initLoginPage()),
-    title: "Login",
+    title: "Login - Chill",
   },
   "/register": {
     html: "./src/routes/register/index.html",
     css: "./src/routes/register/styles.css",
-    title: "Register",
+    title: "Register - Chill",
   },
   "/home": {
     html: "./src/routes/homepage/index.html",
     css: "./src/routes/homepage/styles.css",
-    title: "Home Page",
+    title: "Home Page - Chill",
   },
 
 };
@@ -26,11 +26,19 @@ function getPath() {
 let activeRouteCssLink = null;
 
 function setRouteCss(href) {
-  if (activeRouteCssLink) activeRouteCssLink.remove();
-  activeRouteCssLink = document.createElement("link");
-  activeRouteCssLink.rel = "stylesheet";
-  activeRouteCssLink.href = href;
-  document.head.appendChild(activeRouteCssLink);
+  return new Promise((resolve, reject) => {
+    if (activeRouteCssLink) activeRouteCssLink.remove();
+
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+
+    link.onload = () => resolve();
+    link.onerror = () => reject(new Error(`Failed to load CSS: ${href}`));
+
+    document.head.appendChild(link);
+    activeRouteCssLink = link;
+  });
 }
 
 async function loadHtml(url) {
@@ -38,6 +46,8 @@ async function loadHtml(url) {
   if (!res.ok) throw new Error(`Failed to load: ${url}`);
   return res.text();
 }
+
+let renderToken = 0;
 
 export async function renderRoute() {
   const path = getPath();
@@ -48,20 +58,32 @@ export async function renderRoute() {
   }
 
   const route = routes[path];
-
   if (!route) {
-    console.error("Route not found:", path);
     window.location.hash = "/login";
     return;
   }
 
+  const app = document.getElementById("app");
+
+  // 🔒 fully hide (no paint, no flash)
+  app.style.visibility = "hidden";
+
   document.title = route.title;
-  setRouteCss(route.css);
 
-  document.getElementById("app").innerHTML = await loadHtml(route.html);
+  // load HTML + CSS
+  const htmlPromise = loadHtml(route.html);
+  await setRouteCss(route.css);
 
-  // ✅ IMPORTANT: run route JS after DOM exists
+  // inject AFTER css is ready
+  app.innerHTML = await htmlPromise;
+
+  // init page JS
   await route.init?.();
+
+  // 🧠 wait one frame so layout settles
+  requestAnimationFrame(() => {
+    app.style.visibility = "visible";
+  });
 }
 
 
