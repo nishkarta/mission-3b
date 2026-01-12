@@ -236,19 +236,26 @@ footer {
   display: none;
 }
 
-.footer-nav strong {
+.footer-nav.desktop strong {
+  display: block;
   color: var(--color-greyscale-50);
+  font-size: 16px;
+  margin-bottom: 0.5rem;
 }
 
 .footer-nav ul {
   display: grid;
   grid-template-rows: repeat(4, auto);
   grid-auto-flow: column;
-  column-gap: 1em;
+  column-gap: 1.2em;
   row-gap: 0.25em;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.footer-nav ul li:hover {
+  color: var(--color-greyscale-50);
 }
 
 @media (max-width: 1024px) {
