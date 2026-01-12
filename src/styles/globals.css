@@ -66,6 +66,7 @@
   /* Desktop default */
   --btn-h: 50px;
   --btn-fs: 16px;
+  --btn-size: 44px;
 
   --input-h: 50px;
   --input-fs: 16px;
@@ -102,6 +103,7 @@
   :root {
     --btn-h: 44px;
     --btn-fs: 13px;
+    --btn-size: 32px;
 
     --input-h: 44px;
     --input-fs: 13px;
@@ -139,6 +141,7 @@
   :root {
     --btn-h: 30px;
     --btn-fs: 10px;
+    --btn-size: 25px;
 
     --input-h: 28px;
     --input-fs: 9px;

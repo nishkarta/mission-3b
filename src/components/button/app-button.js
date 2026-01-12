@@ -1,7 +1,10 @@
 const template = document.createElement("template");
 template.innerHTML = `
   <style>
-    :host { display: inline-block; font-family: var(--font-sans, sans-serif); }
+    :host {
+     display: inline-block; 
+     font-family: var(--font-sans, sans-serif); 
+     }
 
     *, *::before, *::after { box-sizing: border-box; }
 
@@ -23,7 +26,7 @@ template.innerHTML = `
       justify-content: center;
       gap: 14px;
 
-      height: var(--btn-h, 50px);
+      height: var(--btn-h);
       padding: 0 28px;
 
       border-radius: 999px;
@@ -75,9 +78,54 @@ template.innerHTML = `
     }
     :host([variant="outline"]) .btn:active { transform: translateY(1px); }
 
+    /* ---------- Shape / Size ---------- */
+
+    /* icon sizes (optional) */
+    :host([size="sm"]) { --btn-size: 36px; }
+    :host([size="md"]) { --btn-size: 44px; }
+    :host([size="lg"]) { --btn-size: 56px; }
+
+    /* circle button */
+  :host([shape="circle"]) .btn {
+  width: var(--btn-size, 44px);
+  height: var(--btn-size, 44px);
+  padding: 0 !important;   /* overrides padding: 0 28px */
+  border-radius: 50% !important;
+  gap: 0;
+  line-height: 1;
+}
+
+    /* center icon */
+    :host([shape="circle"]) ::slotted([slot="icon"]),
+    :host([shape="circle"]) ::slotted(svg),
+    :host([shape="circle"]) ::slotted(img) {
+      width: calc(0.5 * var(--btn-size));
+      height: calc(0.5 * var(--btn-size));
+      display: block;
+    }
+
+    /* circle + full doesn't make sense */
+    :host([shape="circle"][full]) .btn {
+      width: var(--btn-size);
+    }
+
+    :host([variant="glass"]) .btn {
+      background: rgba(0, 0, 0, 0.35);
+      color: #fff;
+      border: 1px solid rgba(231, 227, 252, 0.24);
+      backdrop-filter: blur(6px);
+    }
+    :host([variant="glass"]) .btn:hover {
+      background: rgba(0, 0, 0, 0.5);
+      border-color: rgba(231, 227, 252, 0.36);
+    }
+    :host([variant="glass"]) .btn:active { transform: translateY(1px); }
+
+
+
     /* Focus */
     .btn:focus-visible {
-      outline: 2px solid var(--color-primary, #3254FF);
+      outline: 2px solid var(--color-primary);
       outline-offset: 3px;
     }
 
@@ -109,7 +157,7 @@ template.innerHTML = `
 
 class AppButton extends HTMLElement {
   static get observedAttributes() {
-    return ["type", "disabled", "variant"];
+    return ["type", "disabled", "variant", "shape", "size"];
   }
 
   constructor() {

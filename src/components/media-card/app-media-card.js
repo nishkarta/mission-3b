@@ -88,21 +88,22 @@ template.innerHTML = `
     /* Top-right slot (like Top 10) */
     .corner {
       position: absolute;
-      top: 10px;
+      top: -2px;
       right: 10px;
       z-index: 2;
     }
 
     ::slotted([slot="corner"]) {
       display: inline-flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       font-size: 11px;
       font-weight: 800;
       padding: 6px 8px;
-      border-radius: 10px;
+      border-radius: 0 4px 0 4px;
       color: #fff;
-      background: rgba(255, 64, 64, 0.9);
+      background: var(--color-error-pressed);
     }
 
     /* variants */

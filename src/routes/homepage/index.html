@@ -15,7 +15,7 @@
 
     <div class="nav-user">
       <button aria-label="User menu">
-        <img src="https://placehold.co/40x40" alt="picture" />
+        <img src="https://wallpapers.com/images/hd/cool-profile-picture-87h46gcobjl5e4xu.jpg" alt="picture" />
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round">
           <path d="M6 9l6 6l6 -6" />
@@ -31,7 +31,7 @@
       <h1 id="hero-title">Lorem, ipsum dolor.</h1>
 
       <p class="meta">
-        <span>Series</span> • <span>18+</span>
+        <span>Series</span>&nbsp; • &nbsp;<span>18+</span>
       </p>
 
       <p class="description">
@@ -44,8 +44,13 @@
       </p>
 
       <div class="actions">
-        <app-button variant="primary">Mulai</app-button>
-        <app-button variant="secondary">Selengkapnya</app-button>
+        <div class="left-side">
+          <app-button variant="primary">Mulai</app-button>
+          <app-button variant="secondary">Selengkapnya</app-button>
+        </div>
+        <app-button variant="glass" shape="circle">
+          <img src="../../../assets/images/volume-off.png" alt="" />
+        </app-button>
       </div>
     </article>
   </section>
@@ -53,7 +58,7 @@
   <!-- content sections -->
 
   <div class="content-rows">
-    <section class="content-row" aria-labelledby="continue-title">
+    <section class="content-row continue" aria-labelledby="continue-title">
       <div class="row-head">
         <h2 id="continue-title">Melanjutkan Tonton Film</h2>
       </div>
@@ -61,17 +66,18 @@
       --slider-gap: 16px;
       --slider-arrow-offset: 10px;
     ">
-        <app-media-card style="--card-w: 302px;" title="Lorem, ipsum dolor." img="../../../assets/images/h-1.png" href="">
-          <span slot="badge">Episode Baru</span>
+        <app-media-card title="Lorem, ipsum dolor." img="../../../assets/images/h-1.png" href="">
         </app-media-card>
-        <app-media-card style="--card-w: 302px;" title="Lorem, ipsum dolor." img="../../../assets/images/h-2.png" href=""></app-media-card>
-        <app-media-card style="--card-w: 302px;" title="Lorem, ipsum dolor." img="../../../assets/images/h-3.png" href=""></app-media-card>
-        <app-media-card style="--card-w: 302px;" title="Lorem, ipsum dolor." img="../../../assets/images/h-4.png" href=""></app-media-card>
-        <app-media-card style="--card-w: 302px;" title="Lorem, ipsum dolor." img="../../../assets/images/h-5.png" href=""></app-media-card>
-        <app-media-card style="--card-w: 302px;" title="Lorem, ipsum dolor." img="../../../assets/images/h-6.png" href=""></app-media-card>
-        <app-media-card style="--card-w: 302px;" title="Lorem, ipsum dolor." img="../../../assets/images/h-7.png" href=""></app-media-card>
-        <app-media-card style="--card-w: 302px;" title="Lorem, ipsum dolor." img="../../../assets/images/h-8.png" href=""></app-media-card>
-        <app-media-card style="--card-w: 302px;" title="Lorem, ipsum dolor." img="../../../assets/images/h-9.png" href=""></app-media-card>
+        <app-media-card title="Lorem, ipsum dolor." img="../../../assets/images/h-2.png" href=""></app-media-card>
+        <app-media-card title="Lorem, ipsum dolor." img="../../../assets/images/h-3.png" href=""></app-media-card>
+        <app-media-card title="Lorem, ipsum dolor." img="../../../assets/images/h-4.png" href=""></app-media-card>
+        <app-media-card title="Lorem, ipsum dolor." img="../../../assets/images/h-5.png" href="">
+          <span class="new-episode" slot="badge">Episode Baru</span>
+        </app-media-card>
+        <app-media-card title="Lorem, ipsum dolor." img="../../../assets/images/h-6.png" href=""></app-media-card>
+        <app-media-card title="Lorem, ipsum dolor." img="../../../assets/images/h-7.png" href=""></app-media-card>
+        <app-media-card title="Lorem, ipsum dolor." img="../../../assets/images/h-8.png" href=""></app-media-card>
+        <app-media-card title="Lorem, ipsum dolor." img="../../../assets/images/h-9.png" href=""></app-media-card>
       </app-slider>
     </section>
     <section class="content-row" aria-labelledby="top-rating">
@@ -82,26 +88,17 @@
       --slider-gap: 16px;
       --slider-arrow-offset: 10px;
     ">
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-1.png"
-          href="">
-          <span slot="badge">Episode Baru</span>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-1.png" href="">
+          <span class="new-episode" slot="badge">Episode Baru</span>
         </app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-2.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-3.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-4.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-5.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-6.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-7.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-8.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-9.png"
-          href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-2.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-3.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-4.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-5.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-6.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-7.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-8.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-9.png" href=""></app-media-card>
       </app-slider>
     </section>
     <section class="content-row" aria-labelledby="trending">
@@ -112,26 +109,60 @@
       --slider-gap: 16px;
       --slider-arrow-offset: 10px;
     ">
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-11.png"
-          href="">
-          <span slot="badge">Episode Baru</span>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-11.png" href="">
+          <p class="top-10" slot="corner">
+            <span>Top</span>
+            <span>10</span>
+          </p>
         </app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-12.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-13.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-14.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-15.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-16.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-17.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-18.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-19.png"
-          href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-12.png" href="">
+          <p class="top-10" slot="corner">
+            <span>Top</span>
+            <span>10</span>
+          </p>
+        </app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-13.png" href="">
+          <p class="top-10" slot="corner">
+            <span>Top</span>
+            <span>10</span>
+          </p>
+        </app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-14.png" href="">
+          <p class="top-10" slot="corner">
+            <span>Top</span>
+            <span>10</span>
+          </p>
+        </app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-15.png" href="">
+          <p class="top-10" slot="corner">
+            <span>Top</span>
+            <span>10</span>
+          </p>
+        </app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-16.png" href="">
+          <p class="top-10" slot="corner">
+            <span>Top</span>
+            <span>10</span>
+          </p>
+        </app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-17.png" href="">
+          <p class="top-10" slot="corner">
+            <span>Top</span>
+            <span>10</span>
+          </p>
+        </app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-18.png" href="">
+          <p class="top-10" slot="corner">
+            <span>Top</span>
+            <span>10</span>
+          </p>
+        </app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-19.png" href="">
+          <p class="top-10" slot="corner">
+            <span>Top</span>
+            <span>10</span>
+          </p>
+        </app-media-card>
       </app-slider>
     </section>
     <section class="content-row" aria-labelledby="new-release">
@@ -142,26 +173,22 @@
       --slider-gap: 16px;
       --slider-arrow-offset: 10px;
     ">
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-21.png"
-          href="">
-          <span slot="badge">Episode Baru</span>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-21.png" href="">
+          <p class="top-10" slot="corner">
+            <span>Top</span>
+            <span>10</span>
+          </p>
         </app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-22.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-23.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-24.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-25.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-26.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-27.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-28.png"
-          href=""></app-media-card>
-        <app-media-card style="--card-ratio: 234/365" title="Lorem, ipsum dolor." img="../../../assets/images/p-29.png"
-          href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-22.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-23.png" href="">
+          <span class="new-episode" slot="badge">Episode Baru</span>
+        </app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-24.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-25.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-26.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-27.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-28.png" href=""></app-media-card>
+        <app-media-card style="--card-ratio: 234/365" img="../../../assets/images/p-29.png" href=""></app-media-card>
       </app-slider>
     </section>
   </div>
@@ -174,7 +201,7 @@
     <p>©2023 Chill. All rights reserved.</p>
   </div>
 
-  <nav class="footer-nav" aria-label="Footer navigation">
+  <nav class="footer-nav desktop" aria-label="Footer navigation">
     <div>
       <strong>Genre</strong>
       <ul>
@@ -194,7 +221,14 @@
         <li><a href="#">FAQ</a></li>
         <li><a href="#">Kontak Kami</a></li>
         <li><a href="#">Privasi</a></li>
+        <li style="z-index: -1;">test</li>
       </ul>
+    </div>
+
+  </nav>
+  <nav class="footer-nav mobile" aria-label="Footer navigation">
+    <button><span>Genre</span><img src="../../../assets/images/chevron-right.png" alt="" /></button>
+    <button><span>Bantuan</span><img src="../../../assets/images/chevron-right.png" alt="" /></button>
     </div>
 
   </nav>
