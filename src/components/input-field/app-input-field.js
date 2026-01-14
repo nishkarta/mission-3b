@@ -105,7 +105,7 @@ template.innerHTML = `
       display: block;
     }
 
-    /* optional required indicator */
+    /* required indicator */
     :host([required]) .label::after {
       content: " *";
       color: var(--color-error, #ff5b3a);

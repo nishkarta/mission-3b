@@ -18,11 +18,11 @@ template.innerHTML = `
       display: flex;
       gap: var(--slider-gap, 16px);
       overflow-x: auto;
-      overflow-y: hidden;
+      overflow-y: visible;
       scroll-behavior: smooth;
       scroll-snap-type: x mandatory;
 
-      padding: var(--slider-padding-y, 0px) var(--slider-padding-x, 0px);
+      padding: var(--slider-padding-y, 12px) var(--slider-padding-x, 12px);
 
       /* nicer scrolling */
       -webkit-overflow-scrolling: touch;

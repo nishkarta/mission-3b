@@ -9,7 +9,6 @@ footer {
 .site-header {
   color: var(--color-greyscale-50);
   padding-block: var(--any-size-25-6);
-  border-bottom: 1px solid #E7E3FC3B;
   position: sticky;
   top: 0;
   z-index: 7;
@@ -134,6 +133,7 @@ footer {
 
 
 .hero-content>.description {
+  max-width: 800px;
   font-size: var(--any-size-18-12);
   margin-bottom: var(--any-size-32-20);
   overflow: hidden;
@@ -142,7 +142,7 @@ footer {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
-  word-break: break-all;
+  /* word-break: break-all; */
 }
 
 .hero .actions,
@@ -185,12 +185,16 @@ footer {
 }
 
 .new-episode {
+  display: inline-block;
   padding: 4px 10px;
   background-color: var(--color-primary);
   color: var(--color-greyscale-50);
   border-radius: 24px;
   font-size: var(--any-size-14-10);
+  line-height: 100%;
+  font-weight: 400;
 }
+
 .top-10 {
   padding: 4px;
 }
@@ -283,6 +287,7 @@ footer {
   .hero-content>.description {
     line-clamp: 2;
     -webkit-line-clamp: 2;
+    word-break: break-all;
   }
 
   .content-row app-media-card {

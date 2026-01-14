@@ -80,7 +80,7 @@ template.innerHTML = `
 
     /* ---------- Shape / Size ---------- */
 
-    /* icon sizes (optional) */
+    /* icon sizes */
     :host([size="sm"]) { --btn-size: 36px; }
     :host([size="md"]) { --btn-size: 44px; }
     :host([size="lg"]) { --btn-size: 56px; }
@@ -89,13 +89,12 @@ template.innerHTML = `
   :host([shape="circle"]) .btn {
   width: var(--btn-size, 44px);
   height: var(--btn-size, 44px);
-  padding: 0 !important;   /* overrides padding: 0 28px */
+  padding: 0 !important; 
   border-radius: 50% !important;
   gap: 0;
   line-height: 1;
 }
 
-    /* center icon */
     :host([shape="circle"]) ::slotted([slot="icon"]),
     :host([shape="circle"]) ::slotted(svg),
     :host([shape="circle"]) ::slotted(img) {
@@ -104,7 +103,6 @@ template.innerHTML = `
       display: block;
     }
 
-    /* circle + full doesn't make sense */
     :host([shape="circle"][full]) .btn {
       width: var(--btn-size);
     }
@@ -121,29 +119,23 @@ template.innerHTML = `
     }
     :host([variant="glass"]) .btn:active { transform: translateY(1px); }
 
-
-
-    /* Focus */
     .btn:focus-visible {
       outline: 2px solid var(--color-primary);
       outline-offset: 3px;
     }
 
-    /* Disabled */
     :host([disabled]) .btn {
       opacity: 0.5;
       cursor: not-allowed;
       transform: none;
     }
 
-    /* Icon slot */
     ::slotted([slot="icon"]) {
       width: var(--any-size-20-12);
       height: var(--any-size-20-12);
       display: block;
     }
 
-    /* Make outline button look like your screenshot (more padding) */
     :host([variant="outline"]) .btn {
       padding: 0 34px;
     }

@@ -9,7 +9,7 @@ template.innerHTML = `
 
     *, *::before, *::after { box-sizing: border-box; }
 
-    a {
+    .link {
       display: block;
       color: inherit;
       text-decoration: none;
@@ -43,7 +43,7 @@ template.innerHTML = `
       object-fit: cover;
     }
 
-    /* Title overlay (optional) */
+    /* Title overlay */
     .title {
       position: absolute;
       left: 0;
@@ -55,8 +55,6 @@ template.innerHTML = `
       color: #fff;
 
       background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
-      transform: translateY(0);
-      opacity: 1;
       pointer-events: none;
     }
 
@@ -103,7 +101,30 @@ template.innerHTML = `
       padding: 6px 8px;
       border-radius: 0 4px 0 4px;
       color: #fff;
-      background: var(--color-error-pressed);
+      background: var(--color-error-pressed, #B71F1D);
+    }
+
+    /* ⭐ rating (bottom-right) */
+    .rating {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      z-index: 2;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .rating[hidden] { display: none; }
+
+    .star {
+      font-size: 14px;
+      line-height: 1;
     }
 
     /* variants */
@@ -130,6 +151,11 @@ template.innerHTML = `
         <slot name="corner"></slot>
       </div>
 
+      <div class="rating" hidden>
+        <span class="star">★</span>
+        <span class="rating-text"></span>
+      </div>
+
       <img class="poster" alt="" />
       <div class="title"></div>
     </div>
@@ -138,7 +164,7 @@ template.innerHTML = `
 
 class AppMediaCard extends HTMLElement {
   static get observedAttributes() {
-    return ["title", "img", "href", "alt", "show-title"];
+    return ["title", "img", "alt", "show-title", "rating", "rating-max"];
   }
 
   constructor() {
@@ -146,9 +172,11 @@ class AppMediaCard extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this._link = this.shadowRoot.querySelector(".link");
     this._img = this.shadowRoot.querySelector(".poster");
     this._title = this.shadowRoot.querySelector(".title");
+
+    this._ratingWrap = this.shadowRoot.querySelector(".rating");
+    this._ratingText = this.shadowRoot.querySelector(".rating-text");
   }
 
   connectedCallback() {
@@ -162,17 +190,27 @@ class AppMediaCard extends HTMLElement {
   _render() {
     const title = this.getAttribute("title") || "";
     const img = this.getAttribute("img") || "";
-    const href = this.getAttribute("href") || "#";
     const alt = this.getAttribute("alt") || title || "";
 
-    this._link.setAttribute("href", href);
     this._img.src = img;
     this._img.alt = alt;
 
-    // show-title (default true)
+    // title
     const showTitle = !this.hasAttribute("show-title") || this.getAttribute("show-title") !== "false";
     this._title.textContent = title;
     this._title.style.display = showTitle && title ? "block" : "none";
+
+    // rating (optional)
+    const rating = this.getAttribute("rating");
+    const ratingMax = this.getAttribute("rating-max") || "5";
+
+    if (rating && String(rating).trim() !== "") {
+      this._ratingWrap.hidden = false;
+      this._ratingText.textContent = `${rating}/${ratingMax}`;
+    } else {
+      this._ratingWrap.hidden = true;
+      this._ratingText.textContent = "";
+    }
   }
 }
 
